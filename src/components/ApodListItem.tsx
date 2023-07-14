@@ -1,7 +1,7 @@
-import { View, Text, Pressable, Image, StyleSheet } from "react-native";
-import React from "react";
-import { Apod } from "../types";
-import { Link } from "expo-router";
+import { View, Text, Pressable, Image, StyleSheet } from 'react-native';
+import React from 'react';
+import { Apod } from '../types';
+import { Link } from 'expo-router';
 
 type ApodListItemProps = {
   apod: Apod;
@@ -24,7 +24,7 @@ const ApodListItem = ({ apod, onImagePress = () => {} }: ApodListItemProps) => {
 
           {copyright && (
             <Text style={styles.copyright}>
-              © {copyright?.trim()?.replaceAll("\n", "")}
+              © {copyright?.trim()?.replaceAll('\n', '')}
             </Text>
           )}
         </Pressable>
@@ -35,30 +35,30 @@ const ApodListItem = ({ apod, onImagePress = () => {} }: ApodListItemProps) => {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     elevation: 4,
     marginBottom: 16,
-    overflow: "hidden",
+    overflow: 'hidden',
     maxWidth: 500,
-    width: "100%",
-    alignSelf: "center",
+    width: '100%',
+    alignSelf: 'center',
   },
   date: {
-    position: "absolute",
+    position: 'absolute',
     top: 10,
     right: 10,
     fontSize: 12,
-    color: "white",
-    fontWeight: "bold",
-    backgroundColor: "black",
+    color: 'white',
+    fontWeight: 'bold',
+    backgroundColor: 'black',
     padding: 3,
     borderRadius: 3,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   image: {
-    width: "100%",
+    width: '100%',
     aspectRatio: 16 / 9,
   },
   content: {
@@ -66,11 +66,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5,
   },
   copyright: {
-    color: "gray",
+    color: 'gray',
   },
 });
 
