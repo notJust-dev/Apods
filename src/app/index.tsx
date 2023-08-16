@@ -1,14 +1,14 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
+import { Redirect } from 'expo-router'
+import '../../config/firebase'
+import { useAuthentication } from '../../config/utils/useAuthentication'
+import { getAuth } from 'firebase/auth'
 
-export class index extends Component {
-  render() {
-    return (
-      <View>
-        <Text>index</Text>
-      </View>
-    )
-  }
+const index = () => {
+  const user = getAuth().currentUser
+  console.log('user')
+  console.log(user)
+  return user ? <Redirect href="/home" /> : <Redirect href="/login" />
 }
 
 export default index
