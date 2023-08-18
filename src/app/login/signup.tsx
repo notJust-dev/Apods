@@ -22,7 +22,7 @@ const SignUp = () => {
           // Signed in
           const user = userCredential.user
           console.log(user)
-          router.push('/home')
+          router.push('/mainScreens')
         })
       } catch (error) {
         if (error.code === 'auth/email-already-in-use') {

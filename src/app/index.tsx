@@ -8,7 +8,7 @@ const index = () => {
   const user = getAuth().currentUser
   console.log('user')
   console.log(user)
-  return user ? <Redirect href="/home" /> : <Redirect href="/login" />
+  return user ? <Redirect href="/mainScreens" /> : <Redirect href="/login" />
 }
 
 export default index
