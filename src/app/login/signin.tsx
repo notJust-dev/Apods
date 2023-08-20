@@ -21,7 +21,7 @@ const signin = () => {
         const user = userCredential.user
         console.log(user)
         console.log('Signed in')
-        router.push('/mainScreens')
+        router.replace('/mainScreens')
       })
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {

@@ -5,10 +5,11 @@ import { useAuthentication } from '../../config/utils/useAuthentication'
 import { getAuth } from 'firebase/auth'
 
 const index = () => {
-  const user = getAuth().currentUser
-  console.log('user')
-  console.log(user)
-  return user ? <Redirect href="/mainScreens" /> : <Redirect href="/login" />
+  // const user = getAuth().currentUser
+  // console.log('user')
+  // console.log(user)
+  // return user ? <Redirect href="/mainScreens" /> : <Redirect href="/login" />
+  return <Redirect href="/mainScreens" />
 }
 
 export default index

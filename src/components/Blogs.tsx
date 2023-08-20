@@ -2,12 +2,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const PathologyBanner = ({ data }) => {
+const Blogs = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Pathology Name: {data.pathologyName}</Text>
-      <Text style={styles.text}>Pathology Rating: {data.Rating}</Text>
-      {/* Other components and content */}
+      <Text style={styles.text}>Blog Title</Text>
     </View>
   )
 }
@@ -28,4 +26,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default PathologyBanner
+export default Blogs

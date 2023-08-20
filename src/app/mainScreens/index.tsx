@@ -2,8 +2,10 @@ import { Text, View, Button, StyleSheet, ImageBackground, Pressable } from 'reac
 import React, { useEffect, useState } from 'react'
 import { Link, router } from 'expo-router'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
-import PathologyBanner from '@comp/PathologyBanner'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import Lab from '@comp/Lab'
+import Banner from '@comp/Banner'
+import Blogs from '@comp/Blogs'
 
 const loginPage = () => {
   const [data, setData] = useState([])
@@ -22,7 +24,7 @@ const loginPage = () => {
         dataArray.push(labObject)
         // console.log(doc.id, ' => ', doc.data())
       })
-      // console.log(dataArray)
+      console.log(dataArray)
       setData(dataArray)
     }
 
@@ -37,11 +39,25 @@ const loginPage = () => {
 
   return (
     <SafeAreaView>
-      <Link href="/mainScreens/labListing" asChild>
-        <Pressable>
-          <View>{!loading && data.map((element, index) => <PathologyBanner key={index} data={element.data} />)}</View>
-        </Pressable>
-      </Link>
+      <View>
+        <Banner />
+        {!loading &&
+          data.map(
+            (element, index) => (
+              console.log(element.data),
+              (
+                <Link href={`/mainScreens/labListing/${element.id}`} key={index} asChild>
+                  <Pressable key={index}>
+                    <View>
+                      <Lab data={element.data} />
+                    </View>
+                  </Pressable>
+                </Link>
+              )
+            )
+          )}
+        <Blogs />
+      </View>
     </SafeAreaView>
   )
 }
@@ -61,7 +77,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginBottom: 20,
-    color: 'white' // Text color
+    color: 'black' // Text color
   },
   buttonContainer: {
     flexDirection: 'row',
